@@ -73,7 +73,6 @@ def classify():
     })
 
 if __name__ == '__main__':
-    # Get the port from Railway environment variable or use default
+    # For Railway production
     port = int(os.environ.get("PORT", 5000))
-    # Run the app (debug should be False in production)
     app.run(host='0.0.0.0', port=port, debug=False)
