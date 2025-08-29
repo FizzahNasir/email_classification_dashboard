@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, jsonify
 import re
 
@@ -72,4 +73,7 @@ def classify():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get the port from Railway environment variable or use default
+    port = int(os.environ.get("PORT", 5000))
+    # Run the app (debug should be False in production)
+    app.run(host='0.0.0.0', port=port, debug=False)
